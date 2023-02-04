@@ -3,6 +3,7 @@ package db
 import (
 	"context"
 	"testing"
+	"transfer-api/util"
 
 	"github.com/stretchr/testify/require"
 )
@@ -11,9 +12,9 @@ import (
 func TestCreateAccount(t *testing.T) {
 
 	arg := CreateAccountParams{
-		Owner:    "Gerardo",
-		Balance:  100000,
-		Currency: "USD",
+		Owner:    util.RandomOwner(),
+		Balance:  util.RandomMoney(),
+		Currency: util.RandomCurrency(),
 	}
 
 	account, err := testQueries.CreateAccount(context.Background(), arg)
