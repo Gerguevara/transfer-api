@@ -53,6 +53,7 @@ sqlc:
 
 test:
 	go test -v -cover ./...
+	# go test ./db/sqlc
 
 server:
 	go run main.go
